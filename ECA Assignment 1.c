@@ -7,12 +7,8 @@ int main(void)
     {
         int n;
         double V;
-        do 
-        {
             printf("Enter the Voltage: ");
             scanf("%lf", &V);
-        }
-        while(V == '\0');
         do 
         {
             printf("Enter the number of resistors: ");
@@ -46,6 +42,11 @@ int main(void)
             {
                 RT += R[i];
             }
+            if(RT == 0)
+            {
+                printf("Short Circuit!\n");
+                goto Repeater;
+            }            
         }
         else
         {
@@ -54,6 +55,11 @@ int main(void)
                 if(R[i] != 0)
                 {
                     RT += 1 / R[i];
+                }
+                else
+                {
+                    printf("Short Circuit!\n");
+                    goto Repeater;
                 }
             }
             RT = 1 / RT;
