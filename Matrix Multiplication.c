@@ -5,7 +5,7 @@ int main(void)
     int m, n, p;
     scanf("%i%i%i", &m, &n, &p);
     int mat1[m][n], mat2[n][p], mat3[m][p];
-    int (*ptr1)[n] = mat1, (*ptr2)[n] = mat2, (*ptr3)[n] = mat3;
+    int (*ptr1)[n] = mat1, (*ptr2)[p] = mat2, (*ptr3)[p] = mat3;
     
     for(int i = 0 ; i < m; i++)
         for(int j = 0; j < n; j++)
